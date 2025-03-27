@@ -4,8 +4,8 @@ from telegram import Bot
 
 import os
 
-TOKEN = os.getenv("8128482653:AAHPBfPpinWcif2IBiSfn_3VILBcJ3nBkdw")
-CHAT_ID = os.getenv("1668084744")
+TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 bot = Bot(token=TOKEN)
 
