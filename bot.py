@@ -1,22 +1,27 @@
-import asyncio
-from playwright.async_api import async_playwright
-from telegram import Bot
-
 import os
+from telegram import Bot
+from telegram.error import InvalidToken
 
+# Token va chat ID ni olish
 TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-bot = Bot(token=TOKEN)
+print(f"BOT_TOKEN: {TOKEN}")
+print(f"CHAT_ID: {CHAT_ID}")
 
-async def run():
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        await page.goto("https://www.taobao.com")
-        await page.screenshot(path="screenshot.png")
-        await browser.close()
-        await bot.send_message(chat_id=CHAT_ID, text="✅ Sahifa ochildi va screenshot olindi.")
+if not TOKEN:
+    print("❌ BOT_TOKEN topilmadi. Replit Secret'da uni qo‘shganingizga ishonch hosil qiling.")
+    exit()
 
-if __name__ == "__main__":
-    asyncio.run(run())
+if not CHAT_ID:
+    print("❌ CHAT_ID topilmadi. Replit Secret'da uni ham yozing.")
+    exit()
+
+try:
+    bot = Bot(token=TOKEN)
+    bot.send_message(chat_id=CHAT_ID, text="✅ Shohanshohning boti muvaffaqiyatli ishladi!")
+    print("✅ Telegramga xabar yuborildi.")
+except InvalidToken:
+    print("❌ Noto‘g‘ri BOT_TOKEN! Iltimos, uni BotFather’dan to‘g‘ri nusxalang.")
+except Exception as e:
+    print(f"❌ Noma’lum xatolik: {e}")
