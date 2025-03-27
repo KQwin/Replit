@@ -3,8 +3,8 @@ from telegram import Bot
 from telegram.error import InvalidToken
 
 # Token va chat ID ni olish
-TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+TOKEN = os.getenv("8128482653:AAHPBfPpinWcif2IBiSfn_3VILBcJ3nBkdw")
+CHAT_ID = os.getenv("1668084744")
 
 print(f"BOT_TOKEN: {TOKEN}")
 print(f"CHAT_ID: {CHAT_ID}")
