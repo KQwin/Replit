@@ -32,8 +32,8 @@ Secrets (yashirin o‘zgaruvchilar) bo‘limiga quyidagilarni qo‘shing:
 
 | Nomi       | Qiymat                              |
 |------------|--------------------------------------|
-| `BOT_TOKEN`| `123456789:AAABBBCCCDDDEEE...`       |
-| `CHAT_ID`  | `123456789` (foydalanuvchi yoki guruh ID)
+| `BOT_TOKEN`| `8128482653:AAHPBfPpinWcif2IBiSfn_3VILBcJ3nBkdw`       |
+| `CHAT_ID`  | `1668084744` (foydalanuvchi yoki guruh ID)
 
 ---
 
